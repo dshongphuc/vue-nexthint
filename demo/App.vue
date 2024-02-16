@@ -7,7 +7,8 @@
               </a>
 
               <div class="flex items-center mt-2 -mx-2 sm:mt-0">
-                  <a href="#" 
+                  <a href="https://github.com/dshongphuc/vue-nexthint" 
+                    target="_blank"
                   class="px-3 py-1 text-sm font-semibold text-white transition-colors duration-300 transform border-2 rounded-md hover:bg-gray-700">
                     Github
                   </a>
@@ -33,12 +34,15 @@
                   <p class="text-center mt-4">Try it here: type a name of a framework/programming language. Example: "Vue", then press Tab</p>
 
                   <div class="flex flex-col mt-8 space-y-3 sm:-mx-2 sm:flex-row sm:justify-center sm:space-y-0">
-                      <TabComplete
+                      <NextHint
                         placeholder="Type 'Vue'"
                        :suggestions="suggestions" />
-                      <button class="px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:bg-blue-600 focus:outline-none sm:mx-2">
-                         Submit
-                      </button>
+                      <a
+                        href="https://github.com/dshongphuc/vue-nexthint" 
+                        target="_blank"
+                        class="px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:bg-blue-600 focus:outline-none sm:mx-2">
+                         Download
+                      </a>
                   </div>
 
               </div>
@@ -53,7 +57,7 @@
  </template>
 
 <script setup lang="ts">
-import TabComplete from '../src/TabComplete.vue'
+import NextHint from '../src/NextHint.vue'
 
 const suggestions = [
     "JavaScript", "Python", "Java", "C++", "C#", "Ruby", "PHP", "Swift", "Kotlin", "TypeScript",

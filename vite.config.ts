@@ -22,7 +22,7 @@ export default defineConfig(() => {
       minify: true,
       lib: {
         entry: path.resolve(__dirname, "src/main.ts"),
-        name: "VueTabComplete",
+        name: "VueNextHint",
         fileName: format => `main.${format}.js`,
       },
       rollupOptions: {

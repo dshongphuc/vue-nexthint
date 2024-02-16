@@ -4,5 +4,5 @@ declare module "vue-tab-complete" {
   const component: any;
   export default component;
 
-  export const TabComplete: DefineComponent<{}, {}, any>;
+  export const NextHint: DefineComponent<{}, {}, any>;
 }

@@ -16,22 +16,6 @@ module.exports = {
       logo: ['Montserrat', 'sans-serif'],
     },
     extend: {
-      colors: {
-        miro: {
-          primary: 'var(--color-primary)',
-          blue: '#336CFB',
-          purple: '#0B63F8',
-          green: '#33B959',
-          'gray-light': '#D9D9D9',
-          gray: '#D8D8D8',
-          'gray-lighter': '#F8F8F8',
-          'green-landing': '#007360',
-          yellow: '#DBBE71',
-          mint: '#F8FEFF',
-          orangeskin: '#FB8E67',
-          orange: '#FF6D4A',
-        },
-      },
       backdropBlur: {
         xs: '2px',
       },

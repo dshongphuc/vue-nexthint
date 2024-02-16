@@ -1,7 +1,7 @@
 import './style.css'
 
-import TabComplete from './TabComplete.vue'
+import NextHint from './NextHint.vue'
 
 export {
-  TabComplete
+  NextHint
 }

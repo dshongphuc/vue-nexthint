@@ -1,14 +1,39 @@
 # Vue NextHint
 
-A lightweight javascript library to create some amazing effects for the mouse (cursor) on your website - MagicMouse.js : [https://magicmousejs.web.app/](https://magicmousejs.web.app)
+A Vue component that creates autocomplete functionality for your input fields, but works as tab suggestions instead of dropdown. : [https://vue-nexthint.vercel.app/](https://vue-nexthint.vercel.app)
 
-![One of magic-mouse effects](https://user-images.githubusercontent.com/19908411/77246772-03384880-6c5d-11ea-8074-6975bc8e3632.gif)
-There's more than 4 effects and I'm keep updating now, you can try other effect on https://magicmousejs.web.app/ by changing the example and click to "Try it" button.
+![Demo NextHint](https://gist.github.com/assets/19908411/26d09a14-646b-4812-9c7e-a78b7a42aec8)
 
 # Installation
-MagicMouse.js is a vanilla javascript library so you DON'T need to include any other library like jQuery. There are two options to install it:
+Currently, this package only works with Vue 3.
 
 ## NPM
-If you want to install it to your project via npm: `npm i magicmouse.js`
+Install it using npm: `npm i vue-nexthint`
 
-After that, import to your project by: `import { magicMouse } from 'magicmouse.js'`
+After that, import to your component: `import { NextHint } from 'vue-nexthint'`
+
+## Usage
+In your template:
+```
+<NextHint
+  placeholder="Type 'Vue'"
+  @change="onChangeHandler"
+  :suggestions="['Vue.js', 'React', "Hello world"]"
+/>
+```
+
+The event @change will be trigger every time user enter something, you can handle it like this:
+```
+<script setup>
+  const onChangeHandler = (text) => {
+    // do something with the new text here
+    console.log(text)
+  }
+</script>
+```
+
+
+# License ❤️
+This package is totally free to use. However, if you want to use Magicmouse.js in your commercial projects, I required you to do a good thing for the poor people in your place. You can do whatever you think it's "a good thing", like buy them some food, give them some money,..etc... 
+I'm not requiring you to take a photo or do anything to prove it, just do it and you will feel great about yourself :)
+Let's make the world better place. 
