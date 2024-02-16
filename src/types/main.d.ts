@@ -1,4 +1,4 @@
-declare module "vue-tab-complete" {
+declare module "vue-nexthint" {
   import { DefineComponent } from "vue"
   // eslint-disable-next-line
   const component: any;
