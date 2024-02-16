@@ -2,7 +2,7 @@
 
 A Vue component that creates autocomplete functionality for your input fields, but works as tab suggestions instead of dropdown. : [https://vue-nexthint.vercel.app/](https://vue-nexthint.vercel.app)
 
-![Demo NextHint](https://gist.github.com/assets/19908411/26d09a14-646b-4812-9c7e-a78b7a42aec8)
+![Demo NextHint](https://res.cloudinary.com/veseylab/image/upload/v1708086865/nexthint/wuotjrvsld7xya72qhij.gif)
 
 # Installation
 Currently, this package only works with Vue 3.
