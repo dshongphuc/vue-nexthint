@@ -18,7 +18,7 @@ In your template:
 <NextHint
   placeholder="Type 'Vue'"
   @change="onChangeHandler"
-  :suggestions="['Vue.js', 'React', "Hello world"]"
+  :suggestions="['Vue.js', 'React', 'Hello world']"
 />
 ```
 

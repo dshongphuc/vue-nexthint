@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from "path"
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
@@ -12,7 +13,10 @@ export default defineConfig(() => {
   }
   
   return {
-    plugins: [vue()],
+    plugins: [
+      vue(),
+      cssInjectedByJsPlugin(),
+    ],
     resolve: {
       dedupe: [
         'vue'
@@ -35,11 +39,11 @@ export default defineConfig(() => {
           globals: {
             vue: "Vue",
           },
-          // Use `index.css` for css
-          assetFileNames: assetInfo => {
-            if (assetInfo.name == "style.css") return "index.css"
-            return assetInfo.name
-          },
+          // // Use `index.css` for css
+          // assetFileNames: assetInfo => {
+          //   if (assetInfo.name == "style.css") return "index.css"
+          //   return assetInfo.name
+          // },
         },
       },
     },
