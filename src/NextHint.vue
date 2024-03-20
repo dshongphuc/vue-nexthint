@@ -1,5 +1,6 @@
 <template>
-  <div class="vue-tab-complete-wrapper">
+
+  <div ref="nexthintRef" class="vue-tab-complete-wrapper">
     <input
       v-model="resultQuery"
       type="text"
@@ -10,13 +11,25 @@
 
     <div class="input-overlay">
       <span class="result-query">{{ resultQuery }}</span>
-      <span class="result-suggest">{{ displayRelatedResult }}</span>
+      <span class="result-suggest">
+        {{ displayRelatedResult }}
+
+        <span class="swiper" v-if="displayRelatedResult && browserWidth < 768">
+          swipe 
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+
+        </span>
+      </span>
+
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { watch, computed, ref } from 'vue'
+import { useSwipe, useWindowSize } from '@vueuse/core'
 
 interface Props {
   suggestions: Array<string>
@@ -29,6 +42,10 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const emit = defineEmits(['change'])
+
+const nexthintRef = ref(null)
+const { width: browserWidth } = useWindowSize()
+const { direction } = useSwipe(nexthintRef)
 
 const resultQuery = ref('')
 
@@ -66,6 +83,15 @@ const onKeyDown = (event: any) => {
 watch(resultQuery, () => {
   emit('change', resultQuery.value)
 })
+
+watch(direction, (newDirection) => {
+  if (newDirection === 'right') {
+    if(mostRelatedResult.value) {
+      resultQuery.value = mostRelatedResult.value
+    }
+    
+  }
+})
 </script>
 
 <style lang="scss">
@@ -97,7 +123,22 @@ watch(resultQuery, () => {
     }
 
     .result-suggest {
-      color: #9CA3AF; 
+      color: #9CA3AF;
+
+      .swiper {
+        position: relative;
+        margin-left: .8rem; 
+        font-size: .8rem;
+        color: #cfd0d1; 
+
+        svg {
+          position:absolute;
+          top: -2px;
+          right: -60%;
+          width: 18px;
+          height: 18px;
+        }
+      }
     }
   }
 }
