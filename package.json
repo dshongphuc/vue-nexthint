@@ -1,6 +1,6 @@
 {
   "name": "vue-nexthint",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Vue component that creates autocomplete functionality for your input fields, but works as tab suggestions instead of dropdown.",
   "author": {
     "name": "Phuc Hong.",
